@@ -8,7 +8,6 @@ import pandas as pd
 import plotly.express as px
 from PIL import Image
 import matplotlib.pyplot as plt
-from statsmodels.tsa.seasonal import seasonal_decompose
 
 import joblib as jb
 
