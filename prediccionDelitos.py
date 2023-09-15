@@ -15,7 +15,7 @@ import joblib as jb
 from sklearn.ensemble import RandomForestClassifier
 
 
-imagen_video = Image.open("C:/Users/adiaz/Documents/IA/Delitos/delitos-federales.jpg") 
+imagen_video = Image.open("./delitos-federales.jpg") 
 
 
 #Librerias no usadas
@@ -26,7 +26,7 @@ imagen_video = Image.open("C:/Users/adiaz/Documents/IA/Delitos/delitos-federales
 
 st.set_page_config(
   page_title="ML Delitos Bucaramanga",
-  page_icon="C:/Users/adiaz/Documents/IA/Delitos/4321369.ico",
+  page_icon="./4321369.ico",
   initial_sidebar_state='auto'
   )
 
@@ -58,7 +58,7 @@ que se constituyen una herramienta útil para construir estrategias de prevenci�
 los barrios o comunas de la ciudad.
 """)
 
-df = pd.read_csv('C:/Users/adiaz/Documents/IA/Delitos/Delito Bucaramanga_preprocesar.csv', delimiter=",")
+df = pd.read_csv('https://docs.google.com/spreadsheets/d/e/2PACX-1vQWNndB--MPZM1SZ5sng7g-NejXaSXUiLeNupJ_4Eh92pxKI6BBBDKX2ZtcbR8tiNJAGdVXiCJjtHb5/pub?output=csv', delimiter=",")
 
 with st.container():
   st.write("---")
@@ -126,12 +126,12 @@ generos=['FEMENINO','MASCULINO']
 diaSemana=['lunes','martes','miércoles','jueves','sábado','viernes','domingo']
 
 
-codEdad=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codEdad.bin')
-codHorario=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codHorario.bin')
-codGenero=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codGenero.bin')
-codDia=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codDia.bin')
-codComuna=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codComuna.bin')
-modeloBA=jb.load('C:/Users/adiaz/Documents/IA/Delitos/modeloBA.bin')
+codEdad=jb.load('./codEdad.bin')
+codHorario=jb.load('./codHorario.bin')
+codGenero=jb.load('./codGenero.bin')
+codDia=jb.load('./codDia.bin')
+codComuna=jb.load('./codComuna.bin')
+modeloBA=jb.load('./modeloBA.bin')
 
 
 st.subheader("Detalle del dataset usado en el proyecto")
@@ -142,7 +142,7 @@ st.write("El númerp de tipos de delitos registrados  ", len(df['DELITO_SOLO'].u
 st.write(df.head(5))
 #Opciones de la barra lateral
 
-logo=Image.open("C:/Users/adiaz/Documents/IA/Delitos//menu.jpg")
+logo=Image.open("./menu.jpg")
 st.sidebar.write('...')
 st.sidebar.image(logo, width=100)
 st.sidebar.header('Seleccione los datos de entrada')
