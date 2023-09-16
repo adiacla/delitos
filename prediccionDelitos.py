@@ -214,7 +214,7 @@ with st.container():
   
   X_predecir=pd.DataFrame(lista,columns=['GENERO','MES_NUM','NOM_COM','DIA_NOMBRE','RangoEdad','rangoHORARIO'])
   y_predict=modeloBA.predict(X_predecir)
-  st.write(':blue[La predicción es:]' )
+  st.title(':blue[La predicción es:]' )
   st.title(y_predict[0])
 
   dfc=df[(df["GENERO"]==genero) & (df["MES_NUM"]==mes) & (df["NOM_COM"]==comuna) & (df["DIA_NOMBRE"]==dia) & (df["TIPOLOGÍA"]==y_predict[0])]
