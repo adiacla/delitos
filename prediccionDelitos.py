@@ -142,15 +142,6 @@ comunas=['CABECERA DEL LLANO','CENTRO', 'GARCIA ROVIRA', 'LA CIUDADELA',
 generos=['FEMENINO','MASCULINO']
 diaSemana=['lunes','martes','miércoles','jueves','sábado','viernes','domingo']
 
-
-codEdad=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codEdad.bin')
-codHorario=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codHorario.bin')
-codGenero=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codGenero.bin')
-codDia=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codDia.bin')
-codComuna=jb.load('C:/Users/adiaz/Documents/IA/Delitos/codComuna.bin')
-modeloBA=jb.load('C:/Users/adiaz/Documents/IA/Delitos/modeloBA.bin')
-
-
 st.subheader("Detalle del dataset usado en el proyecto")
 
 st.write("El número de registros cargados es: ", len(df))
