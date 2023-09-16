@@ -158,7 +158,7 @@ st.sidebar.header('Seleccione los datos de entrada')
 
 def seleccionar(generos,comunas, diaSemana,edades,horas):
 
-    #Filtrar por municipio
+  #Filtrar por municipio
 
   st.sidebar.subheader('Selector del Género')
   genero=st.sidebar.selectbox("Seleccione el genero",generos)
@@ -214,11 +214,8 @@ with st.container():
   
   X_predecir=pd.DataFrame(lista,columns=['GENERO','MES_NUM','NOM_COM','DIA_NOMBRE','RangoEdad','rangoHORARIO'])
   y_predict=modeloBA.predict(X_predecir)
-  st.write("""
-    La predicción es: 
-    """)
-  st.write ("La predicción es  :blue[{y_predict[0}]")
-
+  st.markdown("<p style="font-family:sans-serif; color:Green; font-size: 42px;"> La predicción es: <\p' )
+  st.markdown(y_predict[0})
 
   dfc=df[(df["GENERO"]==genero) & (df["MES_NUM"]==mes) & (df["NOM_COM"]==comuna) & (df["DIA_NOMBRE"]==dia) & (df["TIPOLOGÍA"]==y_predict[0])]
   solo=dfc['DELITO_SOLO'].value_counts()/dfc['DELITO_SOLO'].size
