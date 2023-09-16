@@ -49,7 +49,7 @@ def load_models():
 codEdad,codHorario,codGenero,codDia,codComuna,modeloBA = load_models()
 
 #Primer contenedor
-
+st.markdown('----')
 with st.container():
   st.subheader("Prevención Machine Learning para prevencion de delito")
   st.title("Reporte Final ")
@@ -76,7 +76,7 @@ los barrios o comunas de la ciudad.
 """)
 
 
-
+st.markdown('----')
 with st.container():
   st.write("---")
   left_column, right_column = st.columns(2)
@@ -214,15 +214,17 @@ with st.container():
   
   X_predecir=pd.DataFrame(lista,columns=['GENERO','MES_NUM','NOM_COM','DIA_NOMBRE','RangoEdad','rangoHORARIO'])
   y_predict=modeloBA.predict(X_predecir)
+  st.markdown('----')
   st.title(':blue[La predicción es:]' )
   st.title(y_predict[0])
-
+  st.markdown('----')
   dfc=df[(df["GENERO"]==genero) & (df["MES_NUM"]==mes) & (df["NOM_COM"]==comuna) & (df["DIA_NOMBRE"]==dia) & (df["TIPOLOGÍA"]==y_predict[0])]
   solo=dfc['DELITO_SOLO'].value_counts()/dfc['DELITO_SOLO'].size
   solo.rename({'count':'Frecuencia'}, inplace = True)
   barrios=dfc['BARRIOS_HECHO'].value_counts()/dfc['BARRIOS_HECHO'].size
   barrios.rename({'count':'Frecuencia'}, inplace = True)
-    
+  
+st.markdown('----')    
 with st.container():
   if len(solo)!=0:
     st.subheader("Análisis gráficos")
