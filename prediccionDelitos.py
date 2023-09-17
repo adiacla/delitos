@@ -51,7 +51,7 @@ codEdad,codHorario,codGenero,codDia,codComuna,modeloBA = load_models()
 #Primer contenedor
 st.markdown('----')
 with st.container():
-  st.subheader("Modelo Machine Learning para prevencion de delito")
+  st.subheader("Modelo Machine Learning para prevencion de delitos en Bucaramanga")
   st.title("Reporte Final ")
   st.write("Realizado por Alfredo Díaz Claros:wave:")
   st.write("""
